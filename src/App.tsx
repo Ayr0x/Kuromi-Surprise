@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Play, Pause, Volume2, VolumeX } from 'lucide-rea
 import Cards from './Cards';
 
 // Asegúrate de tener el archivo en esta ruta:
-import backgroundMusic from './assets/music/cancion.mp3';
+import backgroundMusic from './assets/music/KUROMI Theme Song.mp3';
 
 const IMAGES = [
   { src: 'https://imgur.com/1ySQlUo.png', bg: '#565656', panel: '#6b6b6b' },
