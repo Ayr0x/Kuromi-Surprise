@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { Lock, Gift, ArrowLeft, X } from 'lucide-react';
 
-// Aquí configuras tus 7 cartas.
-// Para DESBLOQUEAR una carta: colócale un enlace en 'imgUrl' y un mensaje en 'text'.
-// Si 'imgUrl' se queda vacío (''), la carta aparecerá bloqueada con un candado.
 const CARDS_DATA = [
-  { id: 1, imgUrl: 'https://imgur.com/ROF1NUY.png', text: '¡Feliz cumpleaños Vanessa! Que tengas un día hermoso.' },
+  { id: 1, imgUrl: '', text: '¡Feliz cumpleaños Vanessa! Que tengas un día hermoso.' },
   { id: 2, imgUrl: '', text: '' },
   { id: 3, imgUrl: '', text: '' },
   { id: 4, imgUrl: '', text: '' },
@@ -24,7 +21,6 @@ export default function Cards({ onBack }: CardsProps) {
   return (
     <div className="min-h-screen bg-[#1a181b] p-6 sm:p-12 font-['Inter',sans-serif] text-white flex flex-col items-center">
       
-      {/* Botón de regreso */}
       <button 
         onClick={onBack}
         className="self-start flex items-center gap-2 text-white/80 hover:text-white mb-8 transition-colors"
@@ -40,7 +36,6 @@ export default function Cards({ onBack }: CardsProps) {
         TUS SORPRESAS
       </h1>
 
-      {/* Grilla de 7 Cartas */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl">
         {CARDS_DATA.map((card) => {
           const isUnlocked = card.imgUrl !== '';
@@ -71,15 +66,15 @@ export default function Cards({ onBack }: CardsProps) {
         })}
       </div>
 
-      {/* Modal / Carta Volteada al hacer clic */}
       {selectedCard && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedCard(null)}
         >
+          {/* Se cambió max-w-md a max-w-2xl para hacer la tarjeta más ancha */}
           <div 
-            className="relative bg-[#1a181b] border-2 border-[#800080] p-6 rounded-3xl max-w-md w-full flex flex-col items-center shadow-[0_0_40px_rgba(128,0,128,0.3)]"
-            onClick={(e) => e.stopPropagation()} // Evita que al hacer clic en la tarjeta se cierre el modal
+            className="relative bg-[#1a181b] border-2 border-[#800080] p-6 rounded-3xl max-w-2xl w-full flex flex-col items-center shadow-[0_0_40px_rgba(128,0,128,0.3)]"
+            onClick={(e) => e.stopPropagation()}
           >
             <button 
               onClick={() => setSelectedCard(null)}
@@ -88,13 +83,14 @@ export default function Cards({ onBack }: CardsProps) {
               <X size={24} />
             </button>
 
+            {/* Se cambió max-h-[50vh] a max-h-[70vh] para que la imagen crezca más a lo alto */}
             <img 
               src={selectedCard.imgUrl} 
               alt="Sorpresa" 
-              className="w-full h-auto max-h-[50vh] object-contain rounded-xl mb-6 bg-black/20" 
+              className="w-full h-auto max-h-[70vh] object-contain rounded-xl mb-6 bg-black/20" 
             />
             
-            <p className="text-center font-medium text-lg leading-relaxed text-white/90">
+            <p className="text-center font-medium text-lg sm:text-xl leading-relaxed text-white/90">
               {selectedCard.text}
             </p>
           </div>
