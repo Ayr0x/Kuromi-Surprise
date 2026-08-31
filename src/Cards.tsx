@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Lock, Gift, ArrowLeft, X } from 'lucide-react';
 
 // Aquí configuras tus 7 cartas.
 // Para DESBLOQUEAR una carta: colócale un enlace en 'imgUrl' y un mensaje en 'text'.
 // Si 'imgUrl' se queda vacío (''), la carta aparecerá bloqueada con un candado.
 const CARDS_DATA = [
-  { id: 1, imgUrl: '', text: '¡Feliz cumpleaños Vanessa! Que tengas un día hermoso.' },
+  { id: 1, imgUrl: 'https://imgur.com/ROF1NUY.png', text: '¡Feliz cumpleaños Vanessa! Que tengas un día hermoso.' },
   { id: 2, imgUrl: '', text: '' },
   { id: 3, imgUrl: '', text: '' },
   { id: 4, imgUrl: '', text: '' },
