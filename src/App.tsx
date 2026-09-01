@@ -336,7 +336,7 @@ export default function App() {
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.95')}
                   >
-                    DISCOVER IT
+                    POR AQUI SEÑORITA
                     <ArrowRight className="w-5 h-5 sm:w-8 sm:h-8" strokeWidth={2.25} />
                   </button>
                 </div>

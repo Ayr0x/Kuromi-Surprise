@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Lock, Gift, ArrowLeft, X } from 'lucide-react';
 
 const CARDS_DATA = [
-  { id: 1, imgUrl: '', text: '¡Feliz cumpleaños Vanessa! Que tengas un día hermoso.' },
+  { id: 1, imgUrl: 'https://imgur.com/Wp9gSMO.png', text: '¿Quién diría que, después de salir del colegio, volvería a dibujar? ¿Quién creería que alguien lograría inspirarme nuevamente a hacerlo? ¡Feliz inicio de semana, cumpleañera!' },
   { id: 2, imgUrl: '', text: '' },
   { id: 3, imgUrl: '', text: '' },
   { id: 4, imgUrl: '', text: '' },
